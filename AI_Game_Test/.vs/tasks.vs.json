@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-AI_Game_Test",
+      "appliesTo": "AI_Game_Test/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-AI_Game_Test",
+      "appliesTo": "/",
+      "type": "launch"
+    }
+  ]
+}
