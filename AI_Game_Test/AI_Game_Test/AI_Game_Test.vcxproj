@@ -161,6 +161,7 @@
     <ClCompile Include="AI_Game_Test.cpp" />
     <ClCompile Include="AnimatedGameObject.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Matrix.hpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="RegularGameObject.cpp" />
   </ItemGroup>
@@ -174,6 +175,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="RegularGameObject.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Tensor.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

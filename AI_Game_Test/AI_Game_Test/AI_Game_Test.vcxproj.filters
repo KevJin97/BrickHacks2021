@@ -30,6 +30,9 @@
     <ClCompile Include="RegularGameObject.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="Matrix.hpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="AI_Game_Test.rc">
@@ -53,6 +56,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RegularGameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tensor.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

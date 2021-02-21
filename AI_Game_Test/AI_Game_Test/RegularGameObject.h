@@ -33,7 +33,8 @@ class RegularGameObject : public GameObject
 
 		bool getFacing() { return facing; }
 		sf::Vector2f getGravity() const { return gravity; }
-private:
-	bool facing;	//left = 0; right = 1
-	sf::Time Buttonrelease;
+
+	private:
+		bool facing;	//left = 0; right = 1
+		sf::Time Buttonrelease;
 };
