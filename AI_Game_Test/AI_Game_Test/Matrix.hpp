@@ -1,8 +1,10 @@
+#pragma once
 #include <vector>
 //TODO: eigval, eigvec, det diag, (row reduce?)
 //TODO: add exceptions
 
 //CLASS PROTOTYPES
+class Tensor;
 class Matrix;
 class Row;
 class Col;
@@ -23,6 +25,8 @@ public:
 	Matrix(std::size_t* dimensions);
 	~Matrix();
 
+	friend Tensor;
+
 	Matrix eigval(Matrix& matrix);	//find eigenvalues
 	Matrix eigvec(Matrix& matrix);	//find eigenvectors
 	double det(Matrix& matrix);	//determinant of matrix
@@ -41,6 +45,8 @@ public:
 	static Matrix transpose(Matrix& matrix);
 
 	//OPERATOR OVERLOADS
+	Matrix operator +(Matrix matrix);
+	Matrix operator -(Matrix matrix);
 	Matrix operator *(std::vector<double>& vec);	//dot product
 	Matrix operator *(Matrix& matrix);	//dot product
 	Matrix operator *(double scale);	//scalar
@@ -295,6 +301,38 @@ Matrix Matrix::dot(Matrix matrix1, Matrix matrix2)	// (x1, y1) & (x2, y2) == (x2
 		//throw errors
 	}
 	return dot;
+}
+
+Matrix Matrix::operator +(Matrix matrix)
+{
+	Matrix add(this->dimensions);
+	if ((this->dimensions[0] == matrix.dimensions[0]) && (this->dimensions[1] == matrix.dimensions[1]))
+	{
+		for (std::size_t x = 0; x < this->dimensions[0]; ++x)
+		{
+			for (std::size_t y = 0; y < this->dimensions[1]; ++y)
+			{
+				add[x][y] = this->matrix[x][y] + matrix[x][y];
+			}
+		}
+	}
+	return add;
+}
+
+Matrix Matrix::operator -(Matrix matrix)
+{
+	Matrix sub(this->dimensions);
+	if ((this->dimensions[0] == matrix.dimensions[0]) && (this->dimensions[1] == matrix.dimensions[1]))
+	{
+		for (std::size_t x = 0; x < this->dimensions[0]; ++x)
+		{
+			for (std::size_t y = 0; y < this->dimensions[1]; ++y)
+			{
+				sub[x][y] = this->matrix[x][y] + matrix[x][y];
+			}
+		}
+	}
+	return sub;
 }
 
 Matrix Matrix::operator *(std::vector<double>& vec)
