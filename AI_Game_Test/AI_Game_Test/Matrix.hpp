@@ -24,6 +24,7 @@ public:
 	Matrix kron(Matrix& matrix1, Matrix& matrix2);	//Kronecker product
 	Matrix hadamard(Matrix& matrix);	//Hadamard product
 	std::vector<double> vectorize();	//vectorize the matrix
+	Matrix devect(std::vector<double>& matvec, std::size_t x, std::size_t y);	//devectorize a matrix
 	Matrix diag(Matrix& matrix);	//diagonalize matrix
 	Matrix dot(std::vector<std::vector<double>>& matrix1, std::vector<std::vector<double>>& matrix2);
 
@@ -141,7 +142,7 @@ Matrix Matrix::kron(Matrix& matrix1, Matrix& matrix2)
 			total[index] = vector[i + j];
 		}
 	}
-	Matrix out = total.devect(matrix1.dimensions[0] * matrix2.dimensions[0], matrix1.dimensions[1] * matrix2.dimensions[1]);
+	Matrix out = this->devect(total, matrix1.dimensions[0] * matrix2.dimensions[0], matrix1.dimensions[1] * matrix2.dimensions[1]);
 	return out;
 }
 
@@ -178,6 +179,23 @@ std::vector<double> Matrix::vectorize()
 		}
 	}
 	return vectorized;
+}
+
+Matrix Matrix::devect(std::vector<double>& matvec, std::size_t x, std::size_t y)
+{
+	Matrix devect(x, y);
+
+	for (size_t n = 0, xx = 0, yy = 0; n < matvec.size(); ++n, ++xx)	//can be improved later
+	{
+		devect[xx][yy] = matvec[n];
+		if (xx == x)
+		{
+			xx = 0;
+			++yy;
+		}
+	}
+
+	return devect;
 }
 
 Matrix Matrix::diag(Matrix& matrix)
