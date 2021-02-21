@@ -2,6 +2,7 @@
 #include "AnimatedGameObject.h"
 #include <limits>
 #include <stdlib.h>
+#include "DiffEq.hpp"
 //#include "Tensor.hpp"
 
 class Neural
@@ -13,7 +14,7 @@ class Neural
 	private:
 		AnimatedGameObject* ai;
 		AnimatedGameObject* op;
-		float opPotential;
+		double opPotential;
 		int windowSize;
 		sf::Vector2f velocity;
 		sf::Vector2f gravity;

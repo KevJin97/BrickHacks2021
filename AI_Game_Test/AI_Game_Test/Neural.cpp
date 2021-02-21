@@ -10,6 +10,7 @@ Neural::Neural()
 	gravity.y = 3000;
 	jumpCost = 0;
 	numIterations = 0;
+	opPotential = 2e30;
 }
 
 void Neural::set(sf::Time* T, AnimatedGameObject* a, AnimatedGameObject* o, int ws)
@@ -24,27 +25,32 @@ void Neural::update()
 {
 	sf::Vector2f aiPos = ai->getPosition();
 	sf::Vector2f opPos = op->getPosition();
-	float aiPosX = aiPos.x;
-	float opPosX = opPos.x;
+	int aiPosX = aiPos.x;
+	int opPosX = opPos.x;
 	
 
 	//Here's where we'd plug in the bounds for the Schrodinger equation for the diff eq solver
-	//float distribution[] = fun stuff ya know
+	std::vector<double> function(windowSize);
+	function[0] = std::numeric_limits<double>::infinity();
+	function[windowSize - 1] = std::numeric_limits<double>::infinity();
+	function[opPosX] = opPotential;
+	DiffEq diffeq(function, 0, windowSize, 1);
+	std::vector<data> d = diffeq.RK4();
+	
 	
 	//Pick a random point based on the probability distribution
-	//float randNum = static_cast <float> (std::rand()) / static_cast <float> (RAND_MAX);
-	//int index = 0;
-	//while (randNum > 0)
-	//{
-	//	randnum -= distribution[index];
-	//	if (randNum <= 0)
-	//	{
-	//		break;
-	//	}
-	//	++index;
-	//}
-	//float nextPixel = index;
-	float nextPixel = 200; //Temporary, delete later
+	float randnum = static_cast <float> (std::rand()) / static_cast <float> (RAND_MAX);
+	int index = 0;
+	while (randnum > 0)
+	{
+		randnum -= d[index].function;
+		if (randnum <= 0)
+		{
+			break;
+		}
+		++index;
+	}
+	int nextPixel = d[index].variable;
 
 	//Determine whether to move left or right
 	bool m_left = true;

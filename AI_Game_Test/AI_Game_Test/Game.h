@@ -25,5 +25,4 @@ class Game
 		//RegularGameObject map;
 		
 		Neural neural;
-
 };
