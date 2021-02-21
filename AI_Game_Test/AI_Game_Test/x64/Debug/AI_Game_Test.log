@@ -1,5 +1,12 @@
-﻿  AI_Game_Test.cpp
-  Game.cpp
-  Neural.cpp
-  Generating Code...
-  AI_Game_Test.vcxproj -> C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\x64\Debug\AI_Game_Test.exe
+﻿  Matrix.hpp
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(132,1): error C2511: 'Matrix Matrix::kron(Matrix &)': overloaded member function not found in 'Matrix'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(4): message : see declaration of 'Matrix'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(301,12): error C2433: 'Col': 'friend' not permitted on data declarations
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(301,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(303,18): error C2061: syntax error: identifier 'Col'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(322,24): error C2061: syntax error: identifier 'Col'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(306,27): error C2065: 'col': undeclared identifier
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(310,21): error C2065: 'col': undeclared identifier
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(322,43): error C2065: 'col': undeclared identifier
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(322,29): error C2660: 'Row::vdot': function does not take 1 arguments
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(303,9): message : see declaration of 'Row::vdot'

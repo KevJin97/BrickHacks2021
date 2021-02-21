@@ -128,9 +128,21 @@ Matrix Matrix::inverse()
 
 }
 
-Matrix Matrix::kron(Matrix& matrix)
+Matrix Matrix::kron(Matrix& matrix1, Matrix& matrix2)
 {
-	
+	std::vector<double> total(matrix1.dimensions[0] * matrix2.dimensions[0] * matrix1.dimensions[1] * matrix2.dimensions[1]);
+	int index = 0;
+	for (int i = 0; i < matrix1.dimensions[0]; i++)
+	{
+		for (int j = 0; j < matrix1.dimensions[1]; j++)
+		{
+			Matrix product = matrix2 * matrix1[i][j];
+			std::vector<double> vector = product.vectorize();
+			total[index] = vector[i + j];
+		}
+	}
+	Matrix out = total.devect(matrix1.dimensions[0] * matrix2.dimensions[0], matrix1.dimensions[1] * matrix2.dimensions[1]);
+	return out;
 }
 
 Matrix Matrix::hadamard(Matrix& matrix)
