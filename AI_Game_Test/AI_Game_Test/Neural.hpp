@@ -2,6 +2,7 @@
 #include "AnimatedGameObject.h"
 #include <limits>
 #include <stdlib.h>
+#include <math.h>
 #include "DiffEq.hpp"
 //#include "Tensor.hpp"
 

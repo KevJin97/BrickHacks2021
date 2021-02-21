@@ -1,12 +1,51 @@
-﻿  Matrix.hpp
-C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(132,1): error C2511: 'Matrix Matrix::kron(Matrix &)': overloaded member function not found in 'Matrix'
-C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(4): message : see declaration of 'Matrix'
-C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(301,12): error C2433: 'Col': 'friend' not permitted on data declarations
-C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(301,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(303,18): error C2061: syntax error: identifier 'Col'
-C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(322,24): error C2061: syntax error: identifier 'Col'
-C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(306,27): error C2065: 'col': undeclared identifier
-C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(310,21): error C2065: 'col': undeclared identifier
-C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(322,43): error C2065: 'col': undeclared identifier
-C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(322,29): error C2660: 'Row::vdot': function does not take 1 arguments
-C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(303,9): message : see declaration of 'Row::vdot'
+﻿  AI_Game_Test.cpp
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\DiffEq.hpp(98,20): warning C4244: '=': conversion from 'double' to 'size_t', possible loss of data
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\DiffEq.hpp(122,9): warning C4101: 'first_deriv': unreferenced local variable
+  Game.cpp
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\DiffEq.hpp(98,20): warning C4244: '=': conversion from 'double' to 'size_t', possible loss of data
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\DiffEq.hpp(122,9): warning C4101: 'first_deriv': unreferenced local variable
+  Matrix.hpp
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(68,23): error C2027: use of undefined type 'Row'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(9): message : see declaration of 'Row'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(69,27): error C2027: use of undefined type 'Row'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(9): message : see declaration of 'Row'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(75,25): error C2027: use of undefined type 'Col'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(10): message : see declaration of 'Col'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(76,33): error C2027: use of undefined type 'Col'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(10): message : see declaration of 'Col'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(78,23): error C2676: binary '[': 'Col' does not define this operator or a conversion to a type acceptable to the predefined operator
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(81,27): error C2027: use of undefined type 'Col'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(10): message : see declaration of 'Col'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(411,9): error C2027: use of undefined type 'Col'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(10): message : see declaration of 'Col'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(414,1): error C2027: use of undefined type 'Col'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(10): message : see declaration of 'Col'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(418,26): error C2676: binary '[': 'Col' does not define this operator or a conversion to a type acceptable to the predefined operator
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(430,9): error C2027: use of undefined type 'Col'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(10): message : see declaration of 'Col'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(430,29): error C2027: use of undefined type 'Col'
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Matrix.hpp(10): message : see declaration of 'Col'
+  Neural.cpp
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\DiffEq.hpp(98,20): warning C4244: '=': conversion from 'double' to 'size_t', possible loss of data
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\DiffEq.hpp(122,9): warning C4101: 'first_deriv': unreferenced local variable
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Neural.cpp(28,13): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Neural.cpp(29,13): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Neural.cpp(44,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Neural.cpp(54,31): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Neural.cpp(61,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\Neural.cpp(99,59): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\DiffEq.hpp(115): error C4716: 'DiffEq::RK4': must return a value
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\DiffEq.hpp(129): error C4716: 'DiffEq::euler': must return a value
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\DiffEq.hpp(115): error C4716: 'DiffEq::RK4': must return a value
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\DiffEq.hpp(129): error C4716: 'DiffEq::euler': must return a value
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\DiffEq.hpp(115): error C4716: 'DiffEq::RK4': must return a value
+C:\Users\grihi\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\DiffEq.hpp(129): error C4716: 'DiffEq::euler': must return a value

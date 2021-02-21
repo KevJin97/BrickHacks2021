@@ -30,14 +30,22 @@ void Neural::update()
 	
 
 	//Here's where we'd plug in the bounds for the Schrodinger equation for the diff eq solver
-	std::vector<double> function(windowSize);
+	/*std::vector<double> function(windowSize);
 	function[0] = std::numeric_limits<double>::infinity();
 	function[windowSize - 1] = std::numeric_limits<double>::infinity();
 	function[opPosX] = opPotential;
 	DiffEq diffeq(function, 0, windowSize, 1);
-	std::vector<data> d = diffeq.RK4();
-	
-	
+	std::vector<data> d = diffeq.RK4();*/
+
+	std::vector<data> d;
+	for (int i = 0; i < windowSize; i++)
+	{
+		data dat;
+		dat.function = double(sinf(i));
+		dat.variable = double(i);
+		d.push_back(dat);
+	}
+
 	//Pick a random point based on the probability distribution
 	float randnum = static_cast <float> (std::rand()) / static_cast <float> (RAND_MAX);
 	int index = 0;

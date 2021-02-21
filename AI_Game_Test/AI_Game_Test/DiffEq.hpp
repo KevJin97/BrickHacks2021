@@ -23,7 +23,7 @@ private:
 public:
 	DiffEq();
 	DiffEq(std::vector<double> function, data* cond, double start_point, double step_size, std::size_t num_steps);
-	DiffEq(std::vector<double> function, data* cond, double start_point, double end_point, std::size_t num_steps);
+	//DiffEq(std::vector<double> function, data* cond, double start_point, double end_point, std::size_t num_steps);
 	~DiffEq();
 
 	void add_conditions(std::vector<data> cond);
@@ -55,18 +55,18 @@ DiffEq::DiffEq(std::vector<double> function, data* cond, double start_point, dou
 	}
 }
 
-DiffEq::DiffEq(std::vector<double> function, data* cond, double start_point, double end_point, std::size_t num_steps)
-{
-	this->function = function;
-	this->start_point = start_point;
-	this->step_size = (end_point - start_point) / num_steps;
-	this->num_steps = num_steps;
-	this->cond = new data[function.size()];
-	for (std::size_t n = 0; n < function.size(); ++n)
-	{
-		this->cond[n] = cond[n];
-	}
-}
+//DiffEq::DiffEq(std::vector<double> function, data* cond, double start_point, double end_point, std::size_t num_steps)
+//{
+//	this->function = function;
+//	this->start_point = start_point;
+//	this->step_size = (end_point - start_point) / num_steps;
+//	this->num_steps = num_steps;
+//	this->cond = new data[function.size()];
+//	for (std::size_t n = 0; n < function.size(); ++n)
+//	{
+//		this->cond[n] = cond[n];
+//	}
+//}
 
 DiffEq::~DiffEq()
 {
