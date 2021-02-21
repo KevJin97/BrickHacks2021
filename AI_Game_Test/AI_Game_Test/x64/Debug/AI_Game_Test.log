@@ -1,0 +1,8 @@
+﻿  AI_Game_Test.cpp
+  AnimatedGameObject.cpp
+C:\Users\Jin\Documents\GitHub\BrickHacks2021\AI_Game_Test\AI_Game_Test\AnimatedGameObject.cpp(325,3): warning C4145: '&&': relational expression as switch expression; possible confusion with '&'
+  Game.cpp
+  pch.cpp
+  RegularGameObject.cpp
+  Generating Code...
+  AI_Game_Test.vcxproj -> C:\Users\Jin\Documents\GitHub\BrickHacks2021\AI_Game_Test\x64\Debug\AI_Game_Test.exe

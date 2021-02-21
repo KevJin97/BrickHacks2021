@@ -1,5 +1,6 @@
-#include <SFML/Graphics.hpp>
+#include <SFML\Graphics.hpp>
 #include "Game.h"
+#include "pch.h"
 
 int main()
 {

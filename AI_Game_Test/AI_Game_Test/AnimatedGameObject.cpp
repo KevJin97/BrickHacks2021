@@ -1,4 +1,5 @@
 #pragma once
+#include "pch.h"
 #include "AnimatedGameObject.h"
 #include <iostream>
 AnimatedGameObject::AnimatedGameObject()

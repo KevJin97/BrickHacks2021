@@ -1,6 +1,7 @@
 #pragma once
+#include "pch.h"
 #include "GameObject.h"
-#include <SFML/Graphics.hpp>
+#include <SFML\Graphics.hpp>
 
 class RegularGameObject : public GameObject
 {
