@@ -1,5 +1,11 @@
 #include <vector>
 //TODO: eigval, eigvec, det diag, (row reduce?)
+//TODO: add exceptions
+
+//CLASS PROTOTYPES
+class Matrix;
+class Row;
+class Col;
 
 class Matrix
 {
@@ -10,6 +16,8 @@ protected:
 public:
 	//CONSTRUCTORS
 	Matrix();
+	Matrix(Row& row);
+	Matrix(Col& col);
 	Matrix(std::vector<std::vector<double>>& matrix);
 	Matrix(std::size_t x, std::size_t y);
 	Matrix(std::size_t* dimensions);
@@ -35,6 +43,8 @@ public:
 	Matrix operator *(std::vector<double>& vec);	//dot product
 	Matrix operator *(Matrix& matrix);	//dot product
 	Matrix operator *(double scale);	//scalar
+	Matrix operator *(Row& row);	//matrix/row vector multiplication
+	Matrix operator *(Col& col);	//matrix/col vector multiplication
 	void operator *=(Matrix& matrix);	//dot-equals overload
 	std::vector<double> operator [](std::size_t n);	//array index
 };
@@ -43,6 +53,25 @@ Matrix::Matrix()
 {
 	this->dimensions[0] = 0;
 	this->dimensions[1] = 0;
+}
+
+Matrix::Matrix(Row& row)
+{
+	this->matrix.resize(1);
+	this->matrix[0] = row.row;
+	this->dimensions[0] = row.size();
+	this->dimensions[1] = 1;
+}
+
+Matrix::Matrix(Col& col)
+{
+	this->matrix.resize(col.size());
+	for (std::size_t n = 0; n < col.size(); ++n)
+	{
+		matrix[n][0] = col[n];
+	}
+	this->dimensions[0] = 1;
+	this->dimensions[1] = col.size();
 }
 
 Matrix::Matrix(std::vector<std::vector<double>>& matrix)
@@ -128,7 +157,7 @@ Matrix Matrix::inverse()
 
 }
 
-Matrix Matrix::kron(Matrix& matrix)
+Matrix Matrix::kron(Matrix& matrix1, Matrix& matrix2)
 {
 	
 }
@@ -278,6 +307,16 @@ Matrix Matrix::operator *(double scalar)
 	return mat;
 }
 
+Matrix Matrix::operator *(Row& row)
+{
+	return this->dot(this->matrix, (Matrix)row);
+}
+
+Matrix Matrix::operator *(Col& col)
+{
+	return this->dot(this->matrix, (Matrix)col);
+}
+
 void Matrix::operator *=(Matrix& matrix)
 {
 	*this = *this * matrix;
@@ -296,9 +335,10 @@ private:
 
 public:
 	Row() {}
-	Row(std::vector<double>& row);
+	Row(std::vector<double>& row) { this->row = row; }
 	~Row() {}
 	friend Col;
+	friend Matrix;
 
 	double vdot(Col col)
 	{
@@ -320,6 +360,7 @@ public:
 
 	void operator =(std::vector<double>& row) { this->row = row; }
 	double operator *(Col col) { return vdot(col.col); }
+	Matrix operator *(Matrix& mat) { return Matrix::dot((Matrix)(*this), mat); }
 	double operator [](std::size_t n) { return this->row[n]; }
 };
 
@@ -330,9 +371,10 @@ private:
 
 public:
 	Col() {}
-	Col(std::vector<double>& col);
+	Col(std::vector<double>& col) { this->col = col; }
 	~Col() {}
 	friend Row;
+	friend Matrix;
 
 	double vdot(Row& row)
 	{
@@ -354,5 +396,6 @@ public:
 
 	void operator =(std::vector<double>& col) { this->col = col;  }
 	double operator *(Row row) { return vdot(row); }
+	Matrix operator *(Matrix& mat) { return Matrix::dot((Matrix)(*this), mat); }
 	double operator [](std::size_t n) { return this->col[n]; }
 };
