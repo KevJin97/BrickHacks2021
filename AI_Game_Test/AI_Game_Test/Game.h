@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "AnimatedGameObject.h"
 #include "RegularGameObject.h"
+#include "Neural.hpp"
 
 class Game
 {
@@ -17,9 +18,12 @@ class Game
 		
 		sf::RenderWindow m_window;
 		sf::Time deltaT;
+
 		
 		AnimatedGameObject player1;
 		AnimatedGameObject player2;
 		//RegularGameObject map;
+		
+		Neural neural;
 
 };
