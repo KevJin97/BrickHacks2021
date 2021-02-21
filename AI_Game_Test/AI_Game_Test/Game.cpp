@@ -3,7 +3,7 @@
 
 Game::Game() : m_window(sf::VideoMode(1440, 900), "Game Name")		//Change name
 {
-	player1.setfilepath("C:/Users/Jin/source/repos/2036_final_project/2036_final_project/Build/MasterChiefOriginal1.png");
+	player1.setfilepath("Build/MasterChiefOriginal1.png");
 	player1.setTime(deltaT);
 	player1.load();
 	player1.setWindow(m_window);
